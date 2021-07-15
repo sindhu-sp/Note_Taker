@@ -87,14 +87,6 @@ school
 - The following image demonstrates the application functionality:
 
 
-## Team Profile Generator Demo
-
-<img src="Assets/TeamProfile.png" alt="refresh page" height = 300 width= 500 />
-
-## The recording of the working program
-
-<img src="Assets/Team_Profile.gif" alt="refresh page" height = 300 width= 500 />
-
 ## Github Repository URL
 https://github.com/sindhu-sp/Note_Taker
 
