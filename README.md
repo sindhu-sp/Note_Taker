@@ -9,80 +9,43 @@ In this challenge it is to build a Node.js command-line application that takes i
 
 ## User Story
 
-AS A manager, the user want to generate a webpage that displays the team's basic info
-so that the manager have quick access to their emails and GitHub profiles
+AS A small business owner, the user should to be able to write and save notes, so that they can organize their thoughts and keep track of tasks they need to complete.
+
 
 
 ## Criteria
 
-- A command-line application that accepts user input is given
+- A note-taking application is given.
 
-- When prompted for the team members and their information, then an HTML file is generated that displays a nicely formatted team roster based on user input.
+- When the user opens the Note Taker, then presented with a landing page with a link to a notes page.
 
-- When clicked on an email address in the HTML, then the default email program opens and populates the TO field of the email with the address.
+- When clicking on the link to the notes page, then they are presented with a page with existing notes listed in the left-hand column, plus empty fields to enter a new note title and the note’s text in the right-hand column.
 
-- When clicked on the GitHub username, then that GitHub profile opens in a new tab.
+- When they enter a new note title and the note’s text, then a Save icon appears in the navigation at the top of the page.
 
-- When starting the application, then prompted to enter the team manager’s name, employee ID, email address, and office number.
+- When clicking on the Save icon, then the new note that is entered is saved and appears in the left-hand column with the other existing notes.
 
-- When entered the team manager’s name, employee ID, email address, and office number, then presented with a menu with the option to add an engineer or an intern or to finish building my team.
+- When clicking on an existing note in the list in the left-hand column, then that note appears in the right-hand column.
 
-- When selecting the engineer option, then prompted to enter the engineer’s name, ID, email, and GitHub username, and taken back to the menu.
-
-- When selecting the intern option, then prompted to enter the intern’s name, ID, email, and school, and taken back to the menu.
-
-- When deciding to finish building my team, then exit the application, and the HTML is generated
-
+- When clicking on the Write icon in the navigation at the top of the page, then presented with empty fields to enter a new note title and the note’s text in the right-hand column.
 
 ## The Program Guidelines
 
-The application uses Jest for running the unit tests and Inquirer for collecting input from the user. The application will be invoked by using the following command:
+- The application should have a db.json file on the back end that will be used to store and retrieve notes using the fs module.
 
-- node index.js
+- The following HTML routes should be created:
+  - GET /notes should return the notes.html file.
+  - GET * should return the index.html file.
 
-The directory structure that looks like this:
+- The following API routes should be created:
+  - GET /api/notes should read the db.json file and return all saved notes as JSON.
+  - POST /api/notes should receive a new note to save on the request body, add it to the db.json file, and then return the new note to the client. You'll need to find a way to give each note a unique id when it's saved.
 
-- tests            // jest tests
-  -  Employee.test.js
-  -  Engineer.test.js
-  -  Intern.test.js
-  -  Manager.test.js
+## Extras
 
-- dist/               // rendered output (HTML) and CSS style sheet
-- lib/                // classes
-- src/                // template helper code
-- index.js            // runs the application
-
-The application have these classes: Employee, Manager, Engineer, and Intern. The tests for these classes (in the _tests_ directory) all passed.
-
-The first class is an Employee parent class with the following properties and methods:
-
-- name
-- id
-- email
-- getName()
-- getId()
-- getEmail()
-- getRole() // Returns 'Employee'
-
-The other three classes will extend Employee.
-
-In addition to Employee's properties and methods, Manager will also have:
-
-- officeNumber
-- getRole() // Overridden to return 'Manager'
-
-In addition to Employee's properties and methods, Engineer will also have:
-
-- github // GitHub username
-- getGithub()
-- getRole() // Overridden to return 'Engineer'
-
-In addition to Employee's properties and methods, Intern will also have:
-school
-
-- getSchool()
-- getRole() // Overridden to return 'Intern'
+- This application has that functionality in the front end to handle Delete. As a bonus, see if you can add the DELETE route to the application using the following guideline:
+  - DELETE /api/notes/:id should receive a query parameter containing the id of a note to delete. 
+  In order to delete a note, you'll need to read all notes from the db.json file, remove the note with the given id property, and then rewrite the notes to the db.json file.
 
 - The following image demonstrates the application functionality:
 
