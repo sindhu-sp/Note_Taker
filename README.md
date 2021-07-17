@@ -48,7 +48,10 @@ AS A small business owner, the user should to be able to write and save notes, s
   In order to delete a note, you'll need to read all notes from the db.json file, remove the note with the given id property, and then rewrite the notes to the db.json file.
 
 - The following image demonstrates the application functionality:
+<img src="./assets/note_taker.png" alt="refresh page" height = 300 width= 400 />
 
+## Deployed site on heroku
+https://notetaker-sindhu.herokuapp.com
 
 ## Github Repository URL
 https://github.com/sindhu-sp/Note_Taker
