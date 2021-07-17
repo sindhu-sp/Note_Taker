@@ -77,7 +77,7 @@ app.delete('/api/notes/:id', (req, res) => {
 
 // look for notes that dont have matched ids, if ids not match and they have unique id save as an array
   notes = notes.filter(unique => {
-    return unique.id != notes
+    return unique.id != notesId;
   })
 
   // update the notes to the db.json
