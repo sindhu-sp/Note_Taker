@@ -3,7 +3,8 @@
 
 ## About this challenge
 
-In this challenge it is to build a Node.js command-line application that takes in information about employees on a software engineering team and generates an HTML webpage that displays summaries for each person. 
+As a small business owner, the user should to be able to write and save notes, so that they can organize their thoughts and keep track of tasks they need to complete.
+ 
 
 
 
